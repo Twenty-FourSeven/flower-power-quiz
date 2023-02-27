@@ -1,4 +1,6 @@
 //check if there are user scores in local storage, display if so. Or display "No Scores" if no scores exist.
+const scoreEl = document.querySelector(".highscores-container");
+
 const storage = JSON.parse(localStorage.getItem("userScores"));
 
 if (storage === null) {
