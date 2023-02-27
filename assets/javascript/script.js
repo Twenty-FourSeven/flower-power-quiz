@@ -35,7 +35,7 @@ var quizQuestions = [
     },
   ];
 
-  var startBtn = document.querySelector(".start-btn");
+var startBtn = document.querySelector(".start-btn");
 var startContainer = document.querySelector(".start-container");
 var quizContainer = document.querySelector(".quiz-container");
 const timerEl = document.querySelector(".timer");
@@ -49,3 +49,31 @@ startBtn.addEventListener("click", function () {
   startTimer();
 });
 
+function startTimer() {
+    timerEl.textContent = time;
+    var timerInveral = setInterval(() => {
+      time--;
+      timerEl.textContent = time;
+  
+      if (time === 0 || questionIndex > quizQuestions.length - 1) {
+        clearInterval(timerInveral);
+        endQuiz();
+      }
+    }, 1000);
+  }
+
+  submitBtn.addEventListener("click", function () {
+    const userData = {
+      name: input.value,
+      finalScore: score,
+    };
+    let storage = JSON.parse(localStorage.getItem("userScores"));
+    if (storage === null) {
+      storage = [];
+    }
+    storage.push(userData);
+
+    localStorage.setItem("userScores", JSON.stringify(storage));
+    window.location.href = "highscores.html";
+  });
+}
