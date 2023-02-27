@@ -1,7 +1,8 @@
 body {
-    margin: 0;
-    padding: 0;
-    background-color: rgb(255, 255, 255);
-    background-image: url(../images/Antartica.png);
-    height: 100vh;
-}
+    background-image: url(https://c4.wallpaperflare.com/wallpaper/300/523/722/hawaii-city-beach-desktop-wallpaper-%D0%A5%D0%94-2560%C3%971440-wallpaper-preview.jpg);
+  
+    background-size: 100% auto;
+    background-width: 100%;
+    background-height: 100%;
+    text-align: center;
+  }
