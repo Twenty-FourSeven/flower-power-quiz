@@ -70,6 +70,7 @@ function endQuiz() {
   
     quizContainer.append(input, submitBtn);
   
+    //when name submitted to highscores list
     submitBtn.addEventListener("click", function () {
       const userData = {
         name: input.value,
