@@ -34,4 +34,18 @@ var quizQuestions = [
       correct: "50th",
     },
   ];
-  
+
+  var startBtn = document.querySelector(".start-btn");
+var startContainer = document.querySelector(".start-container");
+var quizContainer = document.querySelector(".quiz-container");
+const timerEl = document.querySelector(".timer");
+var score = 0;
+questionIndex = 0;
+let time = 90;
+
+startBtn.addEventListener("click", function () {
+  startContainer.style.display = "none";
+  renderQuestion();
+  startTimer();
+});
+
