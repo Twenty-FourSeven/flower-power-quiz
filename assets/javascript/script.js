@@ -88,13 +88,13 @@ function renderQuestion() {
           quizContainer.innerHTML =
             "<p>Incorrect answer. Ten seconds is deducted from your score.</p>";
         }
-        // add container and delay for rendering next question
-        quizContainer.appendChild(messageDiv);
-        setTimeout(function () {
-          quizContainer.innerHTML = "";
-          questionIndex++;
-          renderQuestion();
-        }, 0);
+      // add container and delay for rendering next question
+      quizContainer.appendChild(messageDiv);
+      setTimeout(function () {
+        quizContainer.innerHTML = "";
+        questionIndex++;
+        renderQuestion();
+      }, 0);
       });
     }
   }
