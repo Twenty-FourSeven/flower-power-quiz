@@ -62,6 +62,30 @@ function startTimer() {
   }, 1000);
 }
 
+function endQuiz() {
+    const input = document.createElement("input");
+    input.setAttribute("placeholder", "Name");
+    const submitBtn = document.createElement("button");
+    submitBtn.textContent = "SUBMIT";
+  
+    quizContainer.append(input, submitBtn);
+  
+    submitBtn.addEventListener("click", function () {
+      const userData = {
+        name: input.value,
+        finalScore: score,
+      };
+      let storage = JSON.parse(localStorage.getItem("userScores"));
+      if (storage === null) {
+        storage = [];
+      }
+      storage.push(userData);
+  
+      localStorage.setItem("userScores", JSON.stringify(storage));
+      window.location.href = "highscores.html";
+    });
+  }
+
 function renderQuestion() {
     if (questionIndex > quizQuestions.length - 1) return;
     var h1 = document.createElement("h1");
