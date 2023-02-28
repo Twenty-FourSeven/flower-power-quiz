@@ -119,7 +119,7 @@ function renderQuestion() {
         quizContainer.innerHTML = "";
         questionIndex++;
         renderQuestion();
-      }, 0);
+      }, 1000); //add 1 sec (1000ms) delay before rendering next question
     });
   }
 }
