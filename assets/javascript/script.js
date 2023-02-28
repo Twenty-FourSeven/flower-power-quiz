@@ -63,56 +63,56 @@ function startTimer() {
 }
 
 function endQuiz() {
-    const input = document.createElement("input");
-    input.setAttribute("placeholder", "Name");
-    const submitBtn = document.createElement("button");
-    submitBtn.textContent = "SUBMIT";
-  
-    quizContainer.append(input, submitBtn);
-  
-    //when name submitted to highscores list
-    submitBtn.addEventListener("click", function () {
-      const userData = {
-        name: input.value,
-        finalScore: score,
-      };
-      let storage = JSON.parse(localStorage.getItem("userScores"));
-      if (storage === null) {
-        storage = [];
-      }
-      storage.push(userData);
-  
-      localStorage.setItem("userScores", JSON.stringify(storage));
-      window.location.href = "highscores.html";
-    });
-  }
+  const input = document.createElement("input");
+  input.setAttribute("placeholder", "Name");
+  const submitBtn = document.createElement("button");
+  submitBtn.textContent = "SUBMIT";
+
+  quizContainer.append(input, submitBtn);
+
+  //when name submitted to highscores list
+  submitBtn.addEventListener("click", function () {
+    const userData = {
+      name: input.value,
+      finalScore: score,
+    };
+    let storage = JSON.parse(localStorage.getItem("userScores"));
+    if (storage === null) {
+      storage = [];
+    }
+    storage.push(userData);
+
+    localStorage.setItem("userScores", JSON.stringify(storage));
+    window.location.href = "highscores.html";
+  });
+}
 
 function renderQuestion() {
-    if (questionIndex > quizQuestions.length - 1) return;
-    var h1 = document.createElement("h1");
-    h1.textContent = quizQuestions[questionIndex].question;
-    quizContainer.append(h1);
-  
-    // for loop - generate and display possible answer options for current question
-    for (var i = 0; i < quizQuestions[questionIndex].answers.length; i++) {
-      var btn = document.createElement("button");
-      btn.textContent = quizQuestions[questionIndex].answers[i];
-      quizContainer.append(btn);
-  
-      // add event listener to answer btn, and when clicked check if right or wrong; then call renderQuestion
-  
-      btn.addEventListener("click", function () {
-        var messageDiv = document.createElement("div");
-        if (this.textContent === quizQuestions[questionIndex].correct) {
-          // Add 10 seconds and display message when answer is correct
-          score += 10;
-          quizContainer.innerHTML = "<p>Correct!</p>";
-        } else {
-          // Subtract 10 seconds and display message when answer is incorrect
-          time -= 10;
-          quizContainer.innerHTML =
-            "<p>Incorrect answer. Ten seconds is deducted from your score.</p>";
-        }
+  if (questionIndex > quizQuestions.length - 1) return;
+  var h1 = document.createElement("h1");
+  h1.textContent = quizQuestions[questionIndex].question;
+  quizContainer.append(h1);
+
+  // for loop - generate and display possible answer options for current question
+  for (var i = 0; i < quizQuestions[questionIndex].answers.length; i++) {
+    var btn = document.createElement("button");
+    btn.textContent = quizQuestions[questionIndex].answers[i];
+    quizContainer.append(btn);
+
+    // add event listener to answer btn, and when clicked check if right or wrong; then call renderQuestion
+
+    btn.addEventListener("click", function () {
+      var messageDiv = document.createElement("div");
+      if (this.textContent === quizQuestions[questionIndex].correct) {
+        // Add 10 seconds and display message when answer is correct
+        score += 10;
+        quizContainer.innerHTML = "<p>Correct!</p>";
+      } else {
+        // Subtract 10 seconds and display message when answer is incorrect
+        time -= 10;
+        quizContainer.innerHTML =
+          "<p>Incorrect answer. Ten seconds is deducted from your score.</p>";
+      }
       // add container and delay for rendering next question
       quizContainer.appendChild(messageDiv);
       setTimeout(function () {
@@ -120,8 +120,6 @@ function renderQuestion() {
         questionIndex++;
         renderQuestion();
       }, 0);
-      });
-    }
+    });
   }
-
-
+}
