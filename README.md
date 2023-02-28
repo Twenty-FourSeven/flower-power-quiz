@@ -31,7 +31,7 @@ GitHub: https://github.com/Twenty-FourSeven
 
 This website was designed as a way to help users widen their knowledge of Hawaiian culture. This quiz is available for all who want to learn, even if just a small increment more, about the ways and customs of Hawaii.
 
-![Screenshot of Full Webpage](assets/images/Portfolio-Image.png)
+![Screenshot of Full Webpage](assets/images/HCQ_Screenshot.png)
 
 
 ## Credits
