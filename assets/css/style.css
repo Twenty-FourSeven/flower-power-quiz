@@ -32,3 +32,15 @@ body {
     font-size: 1.1rem;  
     background: rgb(122, 250, 2);
   }
+
+  .start-btn {
+    font-family: 'Pacifico', cursive;
+    background-color: rgb(226, 43, 43);
+    color: rgb(250, 238, 5);
+  }
+  
+  .view-high-btn{
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;  
+    background-color: rgb(122, 250, 2);
+  }
