@@ -106,6 +106,7 @@ function renderQuestion() {
       if (this.textContent === quizQuestions[questionIndex].correct) {
         // Add 10 seconds and display message when answer is correct
         score += 10;
+        time += 10;
         quizContainer.innerHTML = "<p>Correct!</p>";
       } else {
         // Subtract 10 seconds and display message when answer is incorrect
@@ -119,7 +120,7 @@ function renderQuestion() {
         quizContainer.innerHTML = "";
         questionIndex++;
         renderQuestion();
-      }, 1000); //add 1 sec (1000ms) delay before rendering next question
+      }, 2000); //add 2 sec (2000ms) delay before rendering next question
     });
   }
 }
