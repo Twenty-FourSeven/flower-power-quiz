@@ -7,4 +7,16 @@ body {
     text-align: center;
   }
 
+  h1 {
+
+    font-family: 'Pacifico', cursive;
+    color: rgb(251, 255, 5);
+    text-shadow: 2px 0 0 #000, 0 -2px 0 #000, 0 2px 0 #000, -2px 0 0 #000;
+    text-align: center;
+  }
   
+  h2 {
+    font-family: 'Golos Text', sans-serif;
+    color: rgb(255, 163, 3);
+    text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+  }
