@@ -20,3 +20,15 @@ body {
     color: rgb(255, 163, 3);
     text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
   }
+
+  .timer {
+    font-family: 'Orbitron', sans-serif;
+    color: rgb(25, 241, 90);
+    font-size: 50px;
+  }
+  
+  .home-btn {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.1rem;  
+    background: rgb(122, 250, 2);
+  }
