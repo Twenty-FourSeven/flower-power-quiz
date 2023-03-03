@@ -41,7 +41,7 @@ var quizContainer = document.querySelector(".quiz-container");
 const timerEl = document.querySelector(".timer");
 var score = 0;
 questionIndex = 0;
-let time = 90;
+let time = 30;
 
 startBtn.addEventListener("click", function () {
   startContainer.style.display = "none";
